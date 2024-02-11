@@ -1,28 +1,16 @@
 import React, { useState } from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "Black",
-    backgroundColor: "white"
-  });
-  const [btnText, setBtnText] = useState("Enable Dark Mode")
+export default function About(props) {
+  // const [myStyle, setMyStyle] = useState({
+  //   color: "Black",
+  //   backgroundColor: "white"
+  // });
 
- let toggleStyle = () =>{
-    if (myStyle.color === "#3A3B3C"){
-      setMyStyle({
-        color: "white",
-        backgroundColor: "#3A3B3C"
-      });
-      setBtnText("Disable Dark Mode");
+  let myStyle ={
+    color: props.mode==='dark'?'white':'black',
+    backgroundColor: props.mode==='dark'?'#2d2d30':'white'
   }
-  else {
-    setMyStyle({
-        color: "#3A3B3C",
-        backgroundColor: "white"
-      })
-      setBtnText("Enable Dark Mode");
-    }
-}
+
   return (
     <div className="container" style={myStyle}>
       <h1 className="my-3" style={myStyle}>
@@ -40,7 +28,7 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              <strong>Analyze your text</strong>
             </button>
           </h2>
           <div
@@ -50,14 +38,10 @@ export default function About() {
             style={myStyle}
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            TexUtil tool focuses on its ability to analyze text. 
+            You can outline the features and capabilities of the tool, 
+            such as text analysis algorithms, linguistic insights, or any 
+            other functions that allow users to analyze and understand text more effectively.
             </div>
           </div>
         </div>
@@ -72,7 +56,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              <strong>Free to use</strong>
             </button>
           </h2>
           <div
@@ -81,14 +65,9 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            TexUtil tool is available for users at no cost. You can highlight the benefits 
+            of offering the tool for free, such as accessibility for all users regardless 
+            of budget constraints.
             </div>
           </div>
         </div>
@@ -103,7 +82,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              <strong>Browser Compatible</strong>
             </button>
           </h2>
           <div
@@ -112,21 +91,13 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            TexUtil tool is designed to work seamlessly across various web browsers. 
+            Explain how compatibility ensures that users can access and utilize the tool 
+            regardless of their preferred browser, enhancing usability and convenience.
             </div>
           </div>
         </div>
       </div>
-      <button type="button" onClick={toggleStyle} className="btn btn-primary my-3">
-        {btnText}
-      </button>
     </div>
   );
 }

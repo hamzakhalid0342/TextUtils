@@ -48,10 +48,10 @@ function App() {
     <Routes>
     <Route path="/home" 
           element={<TextForm showAlert={showAlert} heading= "Enter your text to analyze" mode={mode} toggleMode={toggleMode}/>}>
-          </Route>
-          <Route path="/about" element={<About/>}>
     </Route>
-        </Routes>
+    <Route path="/about" element={<About mode={mode}/>}>
+    </Route>
+    </Routes>
     </div>
    </Router>
 </>

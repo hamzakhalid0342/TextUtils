@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -7,6 +7,7 @@ export default function Navbar(props) {
       <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/home">
+
             TextUtils
           </Link>
           <button

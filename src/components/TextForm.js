@@ -69,10 +69,10 @@ export default function TextForm(props) {
           style= {{backgroundColor : props.mode==='dark'?'#2d2d30':'white' , color : props.mode==='dark'?'white':'black'}}
         ></textarea>
       </div>
-      <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
-      <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
-      <button className="btn btn-primary mx-2" onClick={handle}>Convert to FirstCap case</button>
-      <button className="btn btn-primary mx-2" onClick={handleExtraSpace}>Remove Extra Spaces</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handle}>Convert to FirstCap case</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpace}>Remove Extra Spaces</button>
     </div>
     <div className="container my-4" style= {{color : props.mode==='dark'?'white':'black'}}>
         <h1>Text Summary</h1>
